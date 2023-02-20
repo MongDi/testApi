@@ -13,7 +13,7 @@ from config import BASE_DIR
 from scripts.test_emp_add_params import TestEmpAddParams
 from scripts.test_ihrm_login_params import TestIhrmLoginParams
 
-from htmltestreport import HTMLTestReport
+from htmltestreport import HTMLTestRunner
 
 # 初始化 日志的 配置信息
 init_log_config(BASE_DIR + "/log/ihrm.log")
@@ -30,7 +30,7 @@ suite.addTest(unittest.makeSuite(TestEmpAddParams))
 
 # 3. 创建 HTMLTestReport 类实例。 runner
 # runner = HTMLTestReport(BASE_DIR + "/report/ihrm.html")  # 绝对路径
-runner = HTMLTestReport("./report/ihrm.html", description="描述", title="标题")  # 相对路径
+runner = HTMLTestRunner("./report/ihrm.html", description="描述", title="标题")  # 相对路径
 
 # 4. runner 调用 run(), 传入 suite
 runner.run(suite)
